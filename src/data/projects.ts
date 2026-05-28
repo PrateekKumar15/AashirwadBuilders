@@ -4,10 +4,13 @@ export interface ProjectSize {
   features: {
     beds: number;
     baths: number;
-    sqft: number;
+    sqft?: number;
+    sqyard?: number;
     description: string;
     amenities: string[];
   };
+  soldOut?: boolean;
+  remainingUnits?: number;
 }
 
 export interface Project {
@@ -24,92 +27,92 @@ export const projectsData: Project[] = [
     location: "Vaishali West, Jaipur",
     sizes: [
       {
-        name: "3 BHK",
+        name: "4 BHK",
         images: [
-          "/property_1_1778505958766.png",
-          "/property_2_1778505977306.png",
-          "/hero_image_1778505942789.png"
+          "/Pawanputra/1.jpeg",
+          "/Pawanputra/2.jpeg",
+          "/Pawanputra/3.jpeg",
+          "/Pawanputra/4.jpeg",
+          "/Pawanputra/5.jpeg",
+          "/Pawanputra/6.jpeg",
+          "/Pawanputra/7.jpeg"
+        ],
+        features: {
+          beds: 4,
+          baths: 6,
+          sqyard: 156,
+          description: "A stunning architectural marvel featuring floor-to-ceiling glass walls. The 4 BHK configuration offers perfect balance for a modern family.",
+          amenities: ["3 Living Areas", "Smart Home System", "Seperate JDA Patta", "Car Parking", "20ftx70ft", "Triplex Villa", "30ft Road", "Prime Location", "Fully Furnished", "Open Modular Kitchen","Open Terrace Area","Guest Room","Study/Office Room"]    
+        },
+        remainingUnits: 2
+      }
+    ]
+  },
+  {
+    id: "janak-vihar",
+    title: "Janak Vihar",
+    location: "Vaishali West, Jaipur",
+    sizes: [
+      {
+        name: "3 BHK(157sqyd.)",
+        images: [
+          // "/Janakvihar/1.jpeg",
+          // "/Janakvihar/2.jpeg",
+          // "/Janakvihar/3.jpeg",
+          // "/Janakvihar/4.jpeg",
+          // "/Janakvihar/5.jpeg",
+          // "/Janakvihar/6.jpeg",
+          // "/Janakvihar/7.jpeg"
         ],
         features: {
           beds: 3,
-          baths: 3,
-          sqft: 3200,
-          description: "A stunning architectural marvel featuring floor-to-ceiling glass walls. The 3 BHK configuration offers perfect balance for a modern family.",
-          amenities: ["Infinity Pool", "Smart Home System", "Private Garden", "2 Car Garage"]
-        }
+          baths: 4,
+          sqyard: 157,
+          description: "An east facing duplex villa in Vaishali West , Jaipur.This property has 157 square yards of area. It has 3 bedrooms, 4 bathrooms.",
+          amenities: ["2 Living Areas", "Smart Home System", "Seperate JDA Patta", "Car Parking", "24ftx60ft", "Duplex Villa", "40ft Road", "Prime Location", "Fully Furnished", "Open Modular Kitchen","Open Terrace Area","Guest Seating Area","Study/Office Room"]
+        },
+        remainingUnits:1,
       },
       {
-        name: "4 BHK",
+        name: "3 BHK(150sqyd.)",
         images: [
-          "/property_2_1778505977306.png",
-          "/hero_image_1778505942789.png",
-          "/property_1_1778505958766.png"
+          // "/Janakvihar/1.jpeg",
+          // "/Janakvihar/2.jpeg",
+          // "/Janakvihar/3.jpeg",
+          // "/Janakvihar/4.jpeg",
+          // "/Janakvihar/5.jpeg",
+          // "/Janakvihar/6.jpeg",
+          // "/Janakvihar/7.jpeg"
         ],
         features: {
-          beds: 4,
+          beds: 3,
           baths: 4,
-          sqft: 4500,
-          description: "The expansive 4 BHK layout provides additional guest suites and an expanded living area with panoramic city views.",
-          amenities: ["Infinity Pool", "Smart Home System", "Private Garden", "3 Car Garage", "Home Theater"]
-        }
+          sqyard: 150,
+          description: "An east facing duplex villa in Vaishali West , Jaipur.This property has 157 square yards of area. It has 3 bedrooms, 4 bathrooms.",
+          amenities: ["2 Living Areas", "Smart Home System", "Seperate JDA Patta", "Car Parking", "22.5ftx60ft", "Duplex Villa", "40ft Road", "Prime Location", "Fully Furnished", "Open Modular Kitchen","Open Terrace Area","1 Guest Room"]
+        },
+        remainingUnits:1,
       }
     ]
   },
   {
-    id: "azure-villa",
-    title: "Azure Villa",
-    location: "Malibu Coast",
-    sizes: [
-      {
-        name: "4 BHK",
-        images: [
-          "/property_2_1778505977306.png",
-          "/property_1_1778505958766.png",
-          "/hero_image_1778505942789.png"
-        ],
-        features: {
-          beds: 4,
-          baths: 4,
-          sqft: 5200,
-          description: "An oceanfront estate designed for the ultimate luxury lifestyle. The 4 BHK villa includes private beach access.",
-          amenities: ["Beach Access", "Wine Cellar", "Outdoor Kitchen", "Spa"]
-        }
-      },
-      {
-        name: "6 BHK",
-        images: [
-          "/hero_image_1778505942789.png",
-          "/property_2_1778505977306.png",
-          "/property_1_1778505958766.png"
-        ],
-        features: {
-          beds: 6,
-          baths: 7,
-          sqft: 8500,
-          description: "The grand 6 BHK option expands into a massive estate perfect for entertaining, with dual master suites and a private dock.",
-          amenities: ["Beach Access", "Wine Cellar", "Outdoor Kitchen", "Spa", "Private Dock", "Staff Quarters"]
-        }
-      }
-    ]
-  },
-  {
-    id: "skyline-penthouse",
-    title: "Skyline Penthouse",
-    location: "Downtown Metropolis",
+    id: "ecoworld-5",
+    title: "Ecoworld-5 Appartment",
+    location: "Ajmer Road,Jaipur",
     sizes: [
       {
         name: "2 BHK",
         images: [
-          "/hero_image_1778505942789.png",
-          "/property_1_1778505958766.png",
-          "/property_2_1778505977306.png"
+          // "/hero_image_1778505942789.png",
+          // "/property_1_1778505958766.png",
+          // "/property_2_1778505977306.png"
         ],
         features: {
           beds: 2,
           baths: 2,
           sqft: 2100,
           description: "Experience urban living at its peak in this 2 BHK penthouse. Features soaring 15ft ceilings and custom Italian cabinetry.",
-          amenities: ["Concierge", "Gym Access", "Valet Parking"]
+          amenities: ["Kids Play Area", "Rooftop Garden", "Community Hall","GYM","Swimming Pool","CCTV Camera","Senior Sitting Area","Indoor Games","Multipurpose Hall","Yoga Pavilion","Common Green Area","Walking Track","Ample Car Parking","Power Backup","High Speed Elevators","Rain Water Harvesting", "Fire Safety","Provision for EV Charging"]        
         }
       },
       {

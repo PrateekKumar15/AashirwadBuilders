@@ -58,22 +58,37 @@ export default function ProjectDetailsPage() {
         
         {/* Left Column: Carousel */}
         <div className="w-full lg:w-3/5 flex flex-col gap-4">
-          <div className="relative w-full h-[400px] md:h-[600px] rounded-[3rem] overflow-hidden bg-white/20 shadow-xl border-4 border-white/40 group">
+          <div className="relative w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[650px] rounded-[3rem] overflow-hidden bg-black/5 shadow-xl border-4 border-white/40 flex items-center justify-center group">
+            {/* Ambient Blur Background */}
+            <AnimatePresence mode="wait">
+              <motion.img 
+                key={`bg-${activeSizeIndex}-${currentImageIndex}`}
+                src={activeSize.images[currentImageIndex]}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.35 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+                className="absolute inset-0 w-full h-full object-cover filter blur-3xl scale-110 pointer-events-none z-0"
+                alt=""
+              />
+            </AnimatePresence>
+
+            {/* Sharp Center-fitted Image */}
             <AnimatePresence mode="wait">
               <motion.img 
                 key={`${activeSizeIndex}-${currentImageIndex}`}
                 src={activeSize.images[currentImageIndex]}
-                initial={{ opacity: 0, scale: 1.05 }}
+                initial={{ opacity: 0, scale: 0.98 }}
                 animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0 }}
+                exit={{ opacity: 0, scale: 0.98 }}
                 transition={{ duration: 0.5 }}
-                className="w-full h-full object-cover"
+                className="max-w-full max-h-full h-auto w-auto object-contain relative z-10 p-2 sm:p-4 rounded-[1.5rem] md:rounded-[2rem]"
                 alt={`${project.title} - ${activeSize.name}`}
               />
             </AnimatePresence>
 
             {/* Carousel Controls */}
-            <div className="absolute inset-0 flex items-center justify-between px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div className="absolute inset-0 flex items-center justify-between px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
               <button onClick={prevImage} className="bg-white/70 hover:bg-white backdrop-blur-md p-3 rounded-full text-[rgba(30,50,90,0.9)] shadow-lg transition-colors">
                 <ChevronLeft className="w-6 h-6" />
               </button>
@@ -83,7 +98,7 @@ export default function ProjectDetailsPage() {
             </div>
 
             {/* Dots */}
-            <div className="absolute bottom-6 left-0 w-full flex justify-center gap-2">
+            <div className="absolute bottom-6 left-0 w-full flex justify-center gap-2 z-20">
               {activeSize.images.map((_, idx) => (
                 <div 
                   key={idx} 
@@ -112,13 +127,27 @@ export default function ProjectDetailsPage() {
                 <button
                   key={size.name}
                   onClick={() => handleSizeChange(idx)}
-                  className={`px-6 py-3 rounded-full font-bold text-sm transition-all duration-300 border ${
+                  className={`px-5 py-3 rounded-full font-bold text-sm transition-all duration-300 border flex items-center gap-2 ${
                     activeSizeIndex === idx 
                       ? 'bg-[rgba(30,50,90,0.9)] text-white border-transparent shadow-lg scale-105' 
                       : 'bg-white/50 text-[rgba(30,50,90,0.8)] border-[rgba(30,50,90,0.1)] hover:bg-white'
                   }`}
                 >
-                  {size.name}
+                  <span>{size.name}</span>
+                  {size.soldOut && (
+                    <span className={`text-[9px] uppercase tracking-wider font-extrabold px-2 py-0.5 rounded-full ${
+                      activeSizeIndex === idx ? 'bg-red-500 text-white' : 'bg-red-50 text-red-500'
+                    }`}>
+                      Sold
+                    </span>
+                  )}
+                  {!size.soldOut && size.remainingUnits !== undefined && size.remainingUnits <= 3 && (
+                    <span className={`text-[9px] uppercase tracking-wider font-extrabold px-2 py-0.5 rounded-full animate-pulse ${
+                      activeSizeIndex === idx ? 'bg-amber-500 text-white' : 'bg-amber-50 text-amber-500'
+                    }`}>
+                      {size.remainingUnits} Left
+                    </span>
+                  )}
                 </button>
               ))}
             </div>
@@ -134,6 +163,29 @@ export default function ProjectDetailsPage() {
               transition={{ duration: 0.3 }}
               className="bg-white/40 backdrop-blur-xl rounded-[2rem] p-6 border border-white/50 shadow-sm flex flex-col gap-6"
             >
+              {/* Inventory Status Badge */}
+              {(activeSize.soldOut || activeSize.remainingUnits !== undefined) && (
+                <div className="flex items-center gap-2">
+                  {activeSize.soldOut ? (
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-red-50 text-red-600 border border-red-100">
+                      <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
+                      Sold Out
+                    </span>
+                  ) : activeSize.remainingUnits !== undefined ? (
+                    <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold ${
+                      activeSize.remainingUnits <= 3 
+                        ? 'bg-amber-50 text-amber-600 border border-amber-100 animate-pulse' 
+                        : 'bg-green-50 text-green-600 border border-green-100'
+                    }`}>
+                      <span className={`w-1.5 h-1.5 rounded-full ${
+                        activeSize.remainingUnits <= 3 ? 'bg-amber-500' : 'bg-green-500'
+                      }`} />
+                      Only {activeSize.remainingUnits} units left
+                    </span>
+                  ) : null}
+                </div>
+              )}
+
               <div className="flex items-center justify-between border-b border-[rgba(30,50,90,0.1)] pb-6">
                 <div className="flex flex-col items-center gap-2">
                   <div className="bg-[rgba(30,50,90,0.05)] p-3 rounded-full text-[rgba(30,50,90,0.8)]">
@@ -155,8 +207,8 @@ export default function ProjectDetailsPage() {
                   <div className="bg-[rgba(30,50,90,0.05)] p-3 rounded-full text-[rgba(30,50,90,0.8)]">
                     <Maximize className="w-5 h-5" />
                   </div>
-                  <span className="text-lg font-bold text-[rgba(30,50,90,0.9)]">{activeSize.features.sqft}</span>
-                  <span className="text-[10px] uppercase text-[#5E6470] tracking-wider">Sq. Ft.</span>
+                  <span className="text-lg font-bold text-[rgba(30,50,90,0.9)]">{activeSize.features.sqft || activeSize.features.sqyard}</span>
+                  <span className="text-[10px] uppercase text-[#5E6470] tracking-wider">{activeSize.features.sqft ? "Sq. Ft." : "Sq. Yd."}</span>
                 </div>
               </div>
 
@@ -176,13 +228,22 @@ export default function ProjectDetailsPage() {
                 </ul>
               </div>
               
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="mt-4 w-full flex justify-center items-center bg-[rgba(30,50,90,0.9)] hover:bg-[rgba(30,50,90,1)] text-white rounded-full py-4 gap-2 transition-colors shadow-md"
-              >
-                Schedule a Viewing
-              </motion.button>
+              {activeSize.soldOut ? (
+                <button
+                  disabled
+                  className="mt-4 w-full flex justify-center items-center bg-red-50 border border-red-200 text-red-500 rounded-full py-4 font-bold text-sm cursor-not-allowed shadow-none"
+                >
+                  Sold Out
+                </button>
+              ) : (
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="mt-4 w-full flex justify-center items-center bg-[rgba(30,50,90,0.9)] hover:bg-[rgba(30,50,90,1)] text-white rounded-full py-4 gap-2 transition-colors shadow-md text-sm font-bold"
+                >
+                  Schedule a Viewing
+                </motion.button>
+              )}
             </motion.div>
           </AnimatePresence>
 

@@ -43,18 +43,38 @@ export default function Projects() {
               transition={{ delay: idx * 0.1 }}
               className="group relative bg-white/40 backdrop-blur-md rounded-[2rem] p-4 flex flex-col gap-4 border border-white/20 shadow-sm hover:shadow-xl transition-all duration-300"
             >
-              <div className="relative w-full h-[280px] rounded-[1.5rem] overflow-hidden">
-                <img src={defaultImage} alt={project.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute top-4 left-4 bg-white/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-[rgba(30,50,90,0.9)]">
+              <div className="relative w-full h-[320px] rounded-[1.5rem] overflow-hidden bg-black/5 flex items-center justify-center group/img">
+                {/* Ambient Blur Background */}
+                <img 
+                  src={defaultImage} 
+                  alt="" 
+                  className="absolute inset-0 w-full h-full object-cover filter blur-2xl opacity-35 scale-110 pointer-events-none" 
+                />
+                {/* Sharp Center-fitted Image */}
+                <img 
+                  src={defaultImage} 
+                  alt={project.title} 
+                  className="max-w-full max-h-full h-auto w-auto object-contain relative z-10 transition-transform duration-700 group-hover:scale-[1.03] rounded-[1rem] sm:rounded-[1.2rem]" 
+                />
+                <div className="absolute top-4 left-4 z-20 bg-white/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-[rgba(30,50,90,0.9)]">
                   {project.location}
                 </div>
+                {defaultSize.soldOut ? (
+                  <div className="absolute top-4 right-4 z-20 bg-red-500 text-white px-3 py-1 rounded-full text-[10px] uppercase tracking-wider font-extrabold shadow-md">
+                    Sold Out
+                  </div>
+                ) : defaultSize.remainingUnits !== undefined && defaultSize.remainingUnits <= 3 ? (
+                  <div className="absolute top-4 right-4 z-20 bg-amber-500 text-white px-3 py-1 rounded-full text-[10px] uppercase tracking-wider font-extrabold shadow-md animate-pulse">
+                    Only {defaultSize.remainingUnits} Left
+                  </div>
+                ) : null}
               </div>
               <div className="px-2">
                 <h3 className="text-2xl font-normal text-[rgba(30,50,90,0.95)] mb-2">{project.title}</h3>
                 <div className="flex items-center gap-6 text-[#5E6470] text-sm mb-6">
                   <span className="flex items-center gap-1.5"><BedDouble className="w-4 h-4" /> {defaultSize.features.beds} Beds</span>
                   <span className="flex items-center gap-1.5"><Bath className="w-4 h-4" /> {defaultSize.features.baths} Baths</span>
-                  <span className="flex items-center gap-1.5"><Maximize className="w-4 h-4" /> {defaultSize.features.sqft} sqft</span>
+                  <span className="flex items-center gap-1.5"><Maximize className="w-4 h-4" /> {defaultSize.features.sqft ? `${defaultSize.features.sqft} sqft` : `${defaultSize.features.sqyard} sqyd`}</span>
                 </div>
                 <Link href={`/projects/${project.id}`}>
                   <motion.button

@@ -47,14 +47,23 @@ export default function FeaturedProperties() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {properties.map((property) => (
             <div key={property.id} className="bg-white rounded-2xl overflow-hidden shadow-lg hover-lift group cursor-pointer border border-slate-100">
-              <div className="relative h-72 w-full overflow-hidden">
+              <div className="relative h-80 w-full overflow-hidden bg-black/5 flex items-center justify-center group/fpimg">
+                {/* Ambient Blur Background */}
                 <Image 
                   src={property.image} 
-                  alt={property.title} 
-                  fill 
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  alt="" 
+                  fill
+                  className="object-cover filter blur-2xl opacity-35 scale-110 pointer-events-none" 
                 />
-                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-4 py-1 rounded-full font-bold text-sm" style={{ color: 'var(--color-brand-primary)' }}>
+                {/* Sharp Center-fitted Image */}
+                <div className="relative w-full h-full p-2 flex items-center justify-center z-10">
+                  <img 
+                    src={property.image} 
+                    alt={property.title} 
+                    className="max-w-full max-h-full h-auto w-auto object-contain transition-transform duration-700 group-hover:scale-[1.03] rounded-[1rem] sm:rounded-[1.2rem]" 
+                  />
+                </div>
+                <div className="absolute top-4 right-4 z-20 bg-white/90 backdrop-blur-sm px-4 py-1 rounded-full font-bold text-sm" style={{ color: 'var(--color-brand-primary)' }}>
                   {property.price}
                 </div>
               </div>
