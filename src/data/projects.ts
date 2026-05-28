@@ -10,6 +10,7 @@ export interface ProjectSize {
     amenities: string[];
   };
   soldOut?: boolean;
+  totalUnits?: number;
   remainingUnits?: number;
 }
 
@@ -44,6 +45,7 @@ export const projectsData: Project[] = [
           description: "A stunning architectural marvel featuring floor-to-ceiling glass walls. The 4 BHK configuration offers perfect balance for a modern family.",
           amenities: ["3 Living Areas", "Smart Home System", "Seperate JDA Patta", "Car Parking", "20ftx70ft", "Triplex Villa", "30ft Road", "Prime Location", "Fully Furnished", "Open Modular Kitchen","Open Terrace Area","Guest Room","Study/Office Room"]    
         },
+        totalUnits: 2,
         remainingUnits: 2
       }
     ]
@@ -71,7 +73,8 @@ export const projectsData: Project[] = [
           description: "An east facing duplex villa in Vaishali West , Jaipur.This property has 157 square yards of area. It has 3 bedrooms, 4 bathrooms.",
           amenities: ["2 Living Areas", "Smart Home System", "Seperate JDA Patta", "Car Parking", "24ftx60ft", "Duplex Villa", "40ft Road", "Prime Location", "Fully Furnished", "Open Modular Kitchen","Open Terrace Area","Guest Seating Area","Study/Office Room"]
         },
-        remainingUnits:1,
+        totalUnits: 4,
+        remainingUnits: 1,
       },
       {
         name: "3 BHK(150sqyd.)",
@@ -91,7 +94,8 @@ export const projectsData: Project[] = [
           description: "An east facing duplex villa in Vaishali West , Jaipur.This property has 157 square yards of area. It has 3 bedrooms, 4 bathrooms.",
           amenities: ["2 Living Areas", "Smart Home System", "Seperate JDA Patta", "Car Parking", "22.5ftx60ft", "Duplex Villa", "40ft Road", "Prime Location", "Fully Furnished", "Open Modular Kitchen","Open Terrace Area","1 Guest Room"]
         },
-        remainingUnits:1,
+        totalUnits: 4,
+        remainingUnits: 1,
       }
     ]
   },

@@ -30,9 +30,12 @@ export default function Projects() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projectsData.map((project, idx) => {
-          // Use the first size as the default display for the card
           const defaultSize = project.sizes[0];
           const defaultImage = defaultSize.images[0];
+          
+          const totalUnits = project.sizes.reduce((acc, size) => acc + (size.totalUnits || 0), 0);
+          const remainingUnits = project.sizes.reduce((acc, size) => acc + (size.remainingUnits || 0), 0);
+          const isSoldOut = project.sizes.length > 0 && project.sizes.every(s => s.soldOut || s.remainingUnits === 0);
 
           return (
             <motion.div
@@ -59,13 +62,13 @@ export default function Projects() {
                 <div className="absolute top-4 left-4 z-20 bg-white/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-primary/90">
                   {project.location}
                 </div>
-                {defaultSize.soldOut ? (
+                {isSoldOut ? (
                   <div className="absolute top-4 right-4 z-20 bg-red-500 text-white px-3 py-1 rounded-full text-[10px] uppercase tracking-wider font-extrabold shadow-md">
                     Sold Out
                   </div>
-                ) : defaultSize.remainingUnits !== undefined && defaultSize.remainingUnits <= 3 ? (
-                  <div className="absolute top-4 right-4 z-20 bg-amber-500 text-white px-3 py-1 rounded-full text-[10px] uppercase tracking-wider font-extrabold shadow-md animate-pulse">
-                    Only {defaultSize.remainingUnits} Left
+                ) : totalUnits > 0 ? (
+                  <div className={`absolute top-4 right-4 z-20 ${remainingUnits <= 3 ? 'bg-amber-500 animate-pulse' : 'bg-primary/90'} text-white px-3 py-1 rounded-full text-[10px] uppercase tracking-wider font-extrabold shadow-md`}>
+                    {remainingUnits} / {totalUnits} Units Left
                   </div>
                 ) : null}
               </div>

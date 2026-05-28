@@ -141,11 +141,11 @@ export default function ProjectDetailsPage() {
                       Sold
                     </span>
                   )}
-                  {!size.soldOut && size.remainingUnits !== undefined && size.remainingUnits <= 3 && (
-                    <span className={`text-[9px] uppercase tracking-wider font-extrabold px-2 py-0.5 rounded-full animate-pulse ${
+                  {!size.soldOut && size.totalUnits !== undefined && (
+                    <span className={`text-[9px] uppercase tracking-wider font-extrabold px-2 py-0.5 rounded-full ${size.remainingUnits && size.remainingUnits <= 3 ? 'animate-pulse' : ''} ${
                       activeSizeIndex === idx ? 'bg-amber-500 text-white' : 'bg-amber-50 text-amber-500'
                     }`}>
-                      {size.remainingUnits} Left
+                      {size.remainingUnits} / {size.totalUnits} Left
                     </span>
                   )}
                 </button>
@@ -171,16 +171,16 @@ export default function ProjectDetailsPage() {
                       <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
                       Sold Out
                     </span>
-                  ) : activeSize.remainingUnits !== undefined ? (
+                  ) : activeSize.totalUnits !== undefined ? (
                     <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold ${
-                      activeSize.remainingUnits <= 3 
+                      (activeSize.remainingUnits || 0) <= 3 
                         ? 'bg-amber-50 text-amber-600 border border-amber-100 animate-pulse' 
                         : 'bg-green-50 text-green-600 border border-green-100'
                     }`}>
                       <span className={`w-1.5 h-1.5 rounded-full ${
-                        activeSize.remainingUnits <= 3 ? 'bg-amber-500' : 'bg-green-500'
+                        (activeSize.remainingUnits || 0) <= 3 ? 'bg-amber-500' : 'bg-green-500'
                       }`} />
-                      Only {activeSize.remainingUnits} units left
+                      {activeSize.remainingUnits} units left out of {activeSize.totalUnits} total units
                     </span>
                   ) : null}
                 </div>
