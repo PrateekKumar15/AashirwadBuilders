@@ -30,12 +30,10 @@ export default function Navbar() {
       </ul>
 
       <div className="md:hidden">
-        <span className="font-regular tracking-tighter text-xl text-[rgba(30,50,90,0.9)]">
-          AASHIRWAD BUILDERS
-        </span>
+        <img src="/logo.png" alt="Aashirwad Builders" className="h-14 rounded-full w-auto object-contain" />
       </div>
 
-      <div className="flex-1 flex justify-end">
+      <div className="flex-1 flex justify-end items-center gap-6">
         <motion.button
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
@@ -49,6 +47,9 @@ export default function Navbar() {
           </div>
           <span className="text-xs md:text-sm font-normal">Book Demo</span>
         </motion.button>
+        <div className="hidden md:block">
+          <img src="/logo.png" alt="Aashirwad Builders" className="h-16 rounded-full w-auto object-contain mix-blend-multiply" />
+        </div>
       </div>
     </nav>
   );

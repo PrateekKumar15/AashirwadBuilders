@@ -9,9 +9,10 @@ export default function Footer() {
       <div className="max-w-[1536px] mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
         
         <div className="flex flex-col max-w-sm">
-          <span className="font-regular tracking-tighter text-3xl text-[rgba(30,50,90,0.95)] mb-4">
-            AASHIRWAD BUILDERS
-          </span>
+          <div className="mb-6 flex ">
+            <img src="/logo.png" alt="Aashirwad Builders" className="h-16 w-auto object-contain rounded-full mix-blend-multiply" />
+            <div className="ml-5 self-center">AASHIRWAD BUILDERS</div>
+          </div>
           <p className="text-[#5E6470] font-normal leading-relaxed text-sm mb-6">
             Building the future of luxury real estate with an unwavering commitment to quality and architectural innovation.
           </p>
