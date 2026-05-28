@@ -40,7 +40,7 @@ export default function Navbar() {
           onClick={() => {
             window.location.href = "tel:+919785085227";
           }}
-          className="flex items-center bg-[rgba(30,50,90,0.8)] text-white rounded-full pl-2 pr-4 md:pr-6 py-1.5 md:py-2 gap-2 md:gap-3 hover:bg-[rgba(30,50,90,1)] transition-colors group"
+          className="flex items-center bg-primary/80 text-white rounded-full pl-2 pr-4 md:pr-6 py-1.5 md:py-2 gap-2 md:gap-3 hover:bg-primary transition-colors group"
         >
           <div className="bg-white/20 p-1 md:p-1.5 rounded-full flex items-center justify-center">
             <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5 text-white" />

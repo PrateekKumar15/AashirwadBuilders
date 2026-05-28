@@ -16,7 +16,7 @@ export default function AboutUs() {
             viewport={{ once: true }}
             className="inline-block bg-white/60 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 mb-6"
           >
-            <span className="text-[12px] uppercase tracking-wider font-bold text-[rgba(30,50,90,0.8)]">
+            <span className="text-[12px] uppercase tracking-wider font-bold text-primary/80">
               Our Legacy
             </span>
           </motion.div>
@@ -26,7 +26,7 @@ export default function AboutUs() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-normal text-[rgba(30,50,90,0.95)] mb-6 tracking-tight leading-[1.1]"
+            className="text-4xl md:text-5xl lg:text-6xl font-normal text-primary/95 mb-6 tracking-tight leading-[1.1]"
           >
             Crafting architectural masterpieces since 2005.
           </motion.h2>
@@ -36,7 +36,7 @@ export default function AboutUs() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-lg text-[#5E6470] mb-6 leading-relaxed font-normal"
+            className="text-lg text-muted-foreground mb-6 leading-relaxed font-normal"
           >
             At Aashirwad Builders, we believe that a home is more than just a physical structure; it's a foundation for life's greatest moments. With over two decades of expertise in luxury real estate, we merge innovative engineering with timeless design.
           </motion.p>
@@ -46,7 +46,7 @@ export default function AboutUs() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="text-lg text-[#5E6470] mb-10 leading-relaxed font-normal"
+            className="text-lg text-muted-foreground mb-10 leading-relaxed font-normal"
           >
             Our commitment is to transform rigid structural concepts into fluid, living environments that elevate the human experience.
           </motion.p>
@@ -58,7 +58,7 @@ export default function AboutUs() {
             transition={{ delay: 0.4 }}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="flex items-center bg-[rgba(30,50,90,0.8)] text-white rounded-full pl-6 pr-6 py-3 gap-3 hover:bg-[rgba(30,50,90,1)] transition-colors group shadow-md"
+            className="flex items-center bg-primary/80 text-white rounded-full pl-6 pr-6 py-3 gap-3 hover:bg-primary transition-colors group shadow-md"
           >
             <span className="text-sm font-normal">Read Our Story</span>
             <div className="bg-white/20 p-1.5 rounded-full flex items-center justify-center">
@@ -99,8 +99,8 @@ export default function AboutUs() {
             transition={{ delay: 0.6 }}
             className="absolute z-30 top-[5%] right-[10%] bg-white/40 backdrop-blur-xl p-4 rounded-2xl border border-white/30 shadow-xl"
           >
-            <div className="text-3xl font-normal text-[rgba(30,50,90,0.9)] text-center">20+</div>
-            <div className="text-[10px] text-[#5E6470] uppercase tracking-wider text-center mt-1">Years Experience</div>
+            <div className="text-3xl font-normal text-primary/90 text-center">20+</div>
+            <div className="text-[10px] text-muted-foreground uppercase tracking-wider text-center mt-1">Years Experience</div>
           </motion.div>
         </div>
 

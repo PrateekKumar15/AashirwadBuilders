@@ -13,7 +13,7 @@ export default function Projects() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-normal text-[rgba(30,50,90,0.9)] mb-4 tracking-tight"
+          className="text-4xl md:text-5xl font-normal text-primary/90 mb-4 tracking-tight"
         >
           Signature Projects
         </motion.h2>
@@ -22,7 +22,7 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="text-lg text-[#5E6470] max-w-2xl font-normal"
+          className="text-lg text-muted-foreground max-w-2xl font-normal"
         >
           Discover our curated collection of premium real estate, where innovative design meets unparalleled comfort.
         </motion.p>
@@ -56,7 +56,7 @@ export default function Projects() {
                   alt={project.title} 
                   className="max-w-full max-h-full h-auto w-auto object-contain relative z-10 transition-transform duration-700 group-hover:scale-[1.03] rounded-[1rem] sm:rounded-[1.2rem]" 
                 />
-                <div className="absolute top-4 left-4 z-20 bg-white/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-[rgba(30,50,90,0.9)]">
+                <div className="absolute top-4 left-4 z-20 bg-white/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-primary/90">
                   {project.location}
                 </div>
                 {defaultSize.soldOut ? (
@@ -70,8 +70,8 @@ export default function Projects() {
                 ) : null}
               </div>
               <div className="px-2">
-                <h3 className="text-2xl font-normal text-[rgba(30,50,90,0.95)] mb-2">{project.title}</h3>
-                <div className="flex items-center gap-6 text-[#5E6470] text-sm mb-6">
+                <h3 className="text-2xl font-normal text-primary/95 mb-2">{project.title}</h3>
+                <div className="flex items-center gap-6 text-muted-foreground text-sm mb-6">
                   <span className="flex items-center gap-1.5"><BedDouble className="w-4 h-4" /> {defaultSize.features.beds} Beds</span>
                   <span className="flex items-center gap-1.5"><Bath className="w-4 h-4" /> {defaultSize.features.baths} Baths</span>
                   <span className="flex items-center gap-1.5"><Maximize className="w-4 h-4" /> {defaultSize.features.sqft ? `${defaultSize.features.sqft} sqft` : `${defaultSize.features.sqyard} sqyd`}</span>
@@ -80,7 +80,7 @@ export default function Projects() {
                   <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full flex justify-center items-center bg-[rgba(30,50,90,0.05)] hover:bg-[rgba(30,50,90,0.1)] text-[rgba(30,50,90,0.9)] rounded-full py-3 gap-2 transition-colors border border-[rgba(30,50,90,0.1)]"
+                    className="w-full flex justify-center items-center bg-primary/5 hover:bg-primary/10 text-primary/90 rounded-full py-3 gap-2 transition-colors border border-primary/10"
                   >
                     View Details <ArrowUpRight className="w-4 h-4" />
                   </motion.button>

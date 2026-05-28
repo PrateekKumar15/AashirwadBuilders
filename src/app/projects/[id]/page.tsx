@@ -18,7 +18,7 @@ export default function ProjectDetailsPage() {
   if (!project) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-[#f0f0f0]">
-        <h1 className="text-2xl text-[rgba(30,50,90,0.9)]">Project Not Found</h1>
+        <h1 className="text-2xl text-primary/90">Project Not Found</h1>
       </div>
     );
   }
@@ -47,7 +47,7 @@ export default function ProjectDetailsPage() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => router.back()}
-          className="flex items-center gap-2 bg-white/50 backdrop-blur-md px-4 py-2 rounded-full text-[rgba(30,50,90,0.9)] border border-[rgba(30,50,90,0.1)] hover:bg-white transition-colors"
+          className="flex items-center gap-2 bg-white/50 backdrop-blur-md px-4 py-2 rounded-full text-primary/90 border border-primary/10 hover:bg-white transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           <span className="text-sm font-bold tracking-wider">Back</span>
@@ -89,10 +89,10 @@ export default function ProjectDetailsPage() {
 
             {/* Carousel Controls */}
             <div className="absolute inset-0 flex items-center justify-between px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
-              <button onClick={prevImage} className="bg-white/70 hover:bg-white backdrop-blur-md p-3 rounded-full text-[rgba(30,50,90,0.9)] shadow-lg transition-colors">
+              <button onClick={prevImage} className="bg-white/70 hover:bg-white backdrop-blur-md p-3 rounded-full text-primary/90 shadow-lg transition-colors">
                 <ChevronLeft className="w-6 h-6" />
               </button>
-              <button onClick={nextImage} className="bg-white/70 hover:bg-white backdrop-blur-md p-3 rounded-full text-[rgba(30,50,90,0.9)] shadow-lg transition-colors">
+              <button onClick={nextImage} className="bg-white/70 hover:bg-white backdrop-blur-md p-3 rounded-full text-primary/90 shadow-lg transition-colors">
                 <ChevronRight className="w-6 h-6" />
               </button>
             </div>
@@ -111,17 +111,17 @@ export default function ProjectDetailsPage() {
 
         {/* Right Column: Details & Configuration */}
         <div className="w-full lg:w-2/5 flex flex-col">
-          <div className="inline-block bg-[rgba(30,50,90,0.05)] px-3 py-1 rounded-full text-xs font-bold text-[rgba(30,50,90,0.9)] w-fit mb-4 border border-[rgba(30,50,90,0.1)]">
+          <div className="inline-block bg-primary/5 px-3 py-1 rounded-full text-xs font-bold text-primary/90 w-fit mb-4 border border-primary/10">
             {project.location}
           </div>
           
-          <h1 className="text-4xl md:text-5xl font-normal text-[rgba(30,50,90,0.95)] mb-8 tracking-tight">
+          <h1 className="text-4xl md:text-5xl font-normal text-primary/95 mb-8 tracking-tight">
             {project.title}
           </h1>
 
           {/* Size Selector */}
           <div className="mb-8">
-            <h3 className="text-sm font-bold text-[rgba(30,50,90,0.6)] uppercase tracking-wider mb-4">Select Configuration</h3>
+            <h3 className="text-sm font-bold text-primary/60 uppercase tracking-wider mb-4">Select Configuration</h3>
             <div className="flex flex-wrap gap-3">
               {project.sizes.map((size, idx) => (
                 <button
@@ -129,8 +129,8 @@ export default function ProjectDetailsPage() {
                   onClick={() => handleSizeChange(idx)}
                   className={`px-5 py-3 rounded-full font-bold text-sm transition-all duration-300 border flex items-center gap-2 ${
                     activeSizeIndex === idx 
-                      ? 'bg-[rgba(30,50,90,0.9)] text-white border-transparent shadow-lg scale-105' 
-                      : 'bg-white/50 text-[rgba(30,50,90,0.8)] border-[rgba(30,50,90,0.1)] hover:bg-white'
+                      ? 'bg-primary/90 text-white border-transparent shadow-lg scale-105' 
+                      : 'bg-white/50 text-primary/80 border-primary/10 hover:bg-white'
                   }`}
                 >
                   <span>{size.name}</span>
@@ -186,41 +186,41 @@ export default function ProjectDetailsPage() {
                 </div>
               )}
 
-              <div className="flex items-center justify-between border-b border-[rgba(30,50,90,0.1)] pb-6">
+              <div className="flex items-center justify-between border-b border-primary/10 pb-6">
                 <div className="flex flex-col items-center gap-2">
-                  <div className="bg-[rgba(30,50,90,0.05)] p-3 rounded-full text-[rgba(30,50,90,0.8)]">
+                  <div className="bg-primary/5 p-3 rounded-full text-primary/80">
                     <BedDouble className="w-5 h-5" />
                   </div>
-                  <span className="text-lg font-bold text-[rgba(30,50,90,0.9)]">{activeSize.features.beds}</span>
-                  <span className="text-[10px] uppercase text-[#5E6470] tracking-wider">Beds</span>
+                  <span className="text-lg font-bold text-primary/90">{activeSize.features.beds}</span>
+                  <span className="text-[10px] uppercase text-muted-foreground tracking-wider">Beds</span>
                 </div>
                 
                 <div className="flex flex-col items-center gap-2">
-                  <div className="bg-[rgba(30,50,90,0.05)] p-3 rounded-full text-[rgba(30,50,90,0.8)]">
+                  <div className="bg-primary/5 p-3 rounded-full text-primary/80">
                     <Bath className="w-5 h-5" />
                   </div>
-                  <span className="text-lg font-bold text-[rgba(30,50,90,0.9)]">{activeSize.features.baths}</span>
-                  <span className="text-[10px] uppercase text-[#5E6470] tracking-wider">Baths</span>
+                  <span className="text-lg font-bold text-primary/90">{activeSize.features.baths}</span>
+                  <span className="text-[10px] uppercase text-muted-foreground tracking-wider">Baths</span>
                 </div>
 
                 <div className="flex flex-col items-center gap-2">
-                  <div className="bg-[rgba(30,50,90,0.05)] p-3 rounded-full text-[rgba(30,50,90,0.8)]">
+                  <div className="bg-primary/5 p-3 rounded-full text-primary/80">
                     <Maximize className="w-5 h-5" />
                   </div>
-                  <span className="text-lg font-bold text-[rgba(30,50,90,0.9)]">{activeSize.features.sqft || activeSize.features.sqyard}</span>
-                  <span className="text-[10px] uppercase text-[#5E6470] tracking-wider">{activeSize.features.sqft ? "Sq. Ft." : "Sq. Yd."}</span>
+                  <span className="text-lg font-bold text-primary/90">{activeSize.features.sqft || activeSize.features.sqyard}</span>
+                  <span className="text-[10px] uppercase text-muted-foreground tracking-wider">{activeSize.features.sqft ? "Sq. Ft." : "Sq. Yd."}</span>
                 </div>
               </div>
 
-              <p className="text-[#5E6470] leading-relaxed text-sm">
+              <p className="text-muted-foreground leading-relaxed text-sm">
                 {activeSize.features.description}
               </p>
 
               <div>
-                <h4 className="text-sm font-bold text-[rgba(30,50,90,0.9)] mb-3">Premium Amenities</h4>
+                <h4 className="text-sm font-bold text-primary/90 mb-3">Premium Amenities</h4>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {activeSize.features.amenities.map((amenity, i) => (
-                    <li key={i} className="flex items-center gap-2 text-sm text-[#5E6470]">
+                    <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
                       <CheckCircle2 className="w-4 h-4 text-green-600/70" />
                       {amenity}
                     </li>
@@ -239,7 +239,7 @@ export default function ProjectDetailsPage() {
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="mt-4 w-full flex justify-center items-center bg-[rgba(30,50,90,0.9)] hover:bg-[rgba(30,50,90,1)] text-white rounded-full py-4 gap-2 transition-colors shadow-md text-sm font-bold"
+                  className="mt-4 w-full flex justify-center items-center bg-primary/90 hover:bg-primary text-white rounded-full py-4 gap-2 transition-colors shadow-md text-sm font-bold"
                 >
                   Schedule a Viewing
                 </motion.button>

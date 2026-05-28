@@ -30,15 +30,15 @@ export default function BottomRightCorner() {
         </svg>
       </div>
 
-      <div className="bg-[rgba(30,50,90,0.05)] w-10 h-10 md:w-14 md:h-14 rounded-full flex items-center justify-center border border-[rgba(30,50,90,0.1)] group-hover:bg-[rgba(30,50,90,0.1)] transition-colors duration-300">
-        <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6 text-[rgba(30,50,90,0.8)] group-hover:scale-110 transition-transform duration-300" />
+      <div className="bg-primary/5 w-10 h-10 md:w-14 md:h-14 rounded-full flex items-center justify-center border border-primary/10 group-hover:bg-primary/10 transition-colors duration-300">
+        <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6 text-primary/80 group-hover:scale-110 transition-transform duration-300" />
       </div>
 
       <div className="flex flex-col">
-        <span className="text-[16px] md:text-[20px] font-normal text-[rgba(30,50,90,0.95)]">
+        <span className="text-[16px] md:text-[20px] font-normal text-primary/95">
           Featured
         </span>
-        <div className="flex items-center gap-1 text-[rgba(30,50,90,0.6)] group-hover:text-[rgba(30,50,90,0.8)] transition-colors duration-300">
+        <div className="flex items-center gap-1 text-primary/60 group-hover:text-primary/80 transition-colors duration-300">
           <span className="text-[12px] md:text-[15px] font-normal">Properties</span>
           <ChevronRight className="w-3 h-3 md:w-4 md:h-4 transition-transform group-hover:translate-x-1 duration-300" />
         </div>

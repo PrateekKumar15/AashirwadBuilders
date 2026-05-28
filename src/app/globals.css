@@ -12,6 +12,8 @@
 
 @theme {
   --font-helvetica: "Helvetica Regular", ui-sans-serif, system-ui, sans-serif;
+  --color-primary: #1E325A;
+  --color-muted-foreground: #5E6470;
 }
 
 :root {
