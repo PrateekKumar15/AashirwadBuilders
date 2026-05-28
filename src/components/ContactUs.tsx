@@ -149,6 +149,16 @@ export default function ContactUs() {
               />
             </div>
 
+            <div className="flex flex-col gap-1.5">
+              <label className="text-xs font-bold text-[rgba(30,50,90,0.6)] uppercase tracking-wider pl-4">Phone Number</label>
+              <input 
+                type="tel" 
+                name="Phone"
+                placeholder="+91 9876543210" 
+                className="bg-white/50 border border-[rgba(30,50,90,0.1)] rounded-full px-5 py-3 text-[rgba(30,50,90,0.9)] placeholder:text-[rgba(30,50,90,0.3)] focus:outline-none focus:ring-2 focus:ring-[rgba(30,50,90,0.2)] transition-all font-normal"
+              />
+            </div>
+
             <div className="flex flex-col gap-1.5 mb-2">
               <label className="text-xs font-bold text-[rgba(30,50,90,0.6)] uppercase tracking-wider pl-4">Message</label>
               <textarea 
