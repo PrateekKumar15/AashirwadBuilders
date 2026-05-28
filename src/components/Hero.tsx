@@ -32,7 +32,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-4xl sm:text-5xl md:text-6xl lg:text-[80px] font-normal text-[#5E6470] mb-2 tracking-tight leading-[1.05]"
             >
-              Where Luxary Finds a Home           </motion.h1>
+              Where Luxury Finds a Home           </motion.h1>
             
             <motion.p
               initial={{ opacity: 0 }}
