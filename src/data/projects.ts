@@ -23,8 +23,8 @@ export interface Project {
 
 export const projectsData: Project[] = [
   {
-    id: "the-pawan-putra",
-    title: "The Pawan Putra",
+    id: "pawan-putra",
+    title: "Pawan Putra",
     location: "Vaishali West, Jaipur",
     sizes: [
       {

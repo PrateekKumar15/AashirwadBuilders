@@ -57,15 +57,13 @@ export default function Footer() {
             <span className="font-bold text-primary/90 text-sm tracking-wider uppercase mb-2">Company</span>
             <a href="#about" className="text-muted-foreground text-sm hover:text-primary/90 transition-colors">About Us</a>
             <a href="#projects" className="text-muted-foreground text-sm hover:text-primary/90 transition-colors">Projects</a>
-            <a href="#careers" className="text-muted-foreground text-sm hover:text-primary/90 transition-colors">Careers</a>
-            <a href="#press" className="text-muted-foreground text-sm hover:text-primary/90 transition-colors">Press</a>
           </div>
           
           <div className="flex flex-col gap-4">
             <span className="font-bold text-primary/90 text-sm tracking-wider uppercase mb-2">Legal</span>
-            <a href="#terms" className="text-muted-foreground text-sm hover:text-primary/90 transition-colors">Terms of Service</a>
-            <a href="#privacy" className="text-muted-foreground text-sm hover:text-primary/90 transition-colors">Privacy Policy</a>
-            <a href="#cookies" className="text-muted-foreground text-sm hover:text-primary/90 transition-colors">Cookie Policy</a>
+            <a href="/terms" className="text-muted-foreground text-sm hover:text-primary/90 transition-colors">Terms of Service</a>
+            <a href="/privacy" className="text-muted-foreground text-sm hover:text-primary/90 transition-colors">Privacy Policy</a>
+            <a href="/cookies" className="text-muted-foreground text-sm hover:text-primary/90 transition-colors">Cookie Policy</a>
           </div>
         </div>
 
