@@ -51,7 +51,7 @@ export default function FeaturedProperties() {
                 {/* Ambient Blur Background */}
                 <Image 
                   src={property.image} 
-                  alt="" 
+                  alt={`${property.title} background blur`} 
                   fill
                   className="object-cover filter blur-2xl opacity-35 scale-110 pointer-events-none" 
                 />

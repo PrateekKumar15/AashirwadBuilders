@@ -101,7 +101,7 @@ export const projectsData: Project[] = [
   },
   {
     id: "ecoworld-5",
-    title: "Ecoworld-5 Appartment",
+    title: "Ecoworld-5 Apartment",
     location: "Ajmer Road,Jaipur",
     sizes: [
       {

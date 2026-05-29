@@ -27,6 +27,9 @@ export const metadata: Metadata = {
     description: "Find your dream home with Aashirwad Builders. Premium luxury real estate, apartments, and villas.",
     images: ["/logo.png"],
   },
+  icons: {
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({

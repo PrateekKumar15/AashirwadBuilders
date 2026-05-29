@@ -50,7 +50,7 @@ export default function Projects() {
                 {/* Ambient Blur Background */}
                 <img 
                   src={defaultImage} 
-                  alt="" 
+                  alt={`${project.title} background blur`} 
                   className="absolute inset-0 w-full h-full object-cover filter blur-2xl opacity-35 scale-110 pointer-events-none" 
                 />
                 {/* Sharp Center-fitted Image */}
