@@ -24,7 +24,7 @@ export default function Projects() {
           transition={{ delay: 0.1 }}
           className="text-lg text-muted-foreground max-w-2xl font-normal"
         >
-          Discover our curated collection of premium real estate, where innovative design meets unparalleled comfort.
+          Discover our curated collection of premium real estate, where innovative design meets unparalleled comfort. Discover an exclusive selection of meticulously crafted apartments, penthouses, and villas that redefine modern living. Welcome to the home of your dreams.
         </motion.p>
       </div>
 

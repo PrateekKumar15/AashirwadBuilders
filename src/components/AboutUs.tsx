@@ -48,7 +48,7 @@ export default function AboutUs() {
             transition={{ delay: 0.3 }}
             className="text-lg text-muted-foreground mb-10 leading-relaxed font-normal"
           >
-            Our commitment is to transform rigid structural concepts into fluid, living environments that elevate the human experience.
+            Our commitment is to transform rigid structural concepts into fluid, living environments that elevate the human experience. This is where your search for the perfect property ends, and luxury truly finds a home. With Aashirwad Builders, you are not just buying a house; you are stepping into a community built on trust, architectural brilliance, and an uncompromising commitment to quality.
           </motion.p>
           
           <motion.button

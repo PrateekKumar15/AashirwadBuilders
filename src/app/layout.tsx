@@ -40,6 +40,21 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className="min-h-screen flex flex-col antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "RealEstateAgent",
+              "name": "Aashirwad Builders",
+              "url": "https://aashirwadbuilders.com",
+              "logo": "https://aashirwadbuilders.com/logo.png",
+              "sameAs": [
+                "https://www.instagram.com/aashirwad_builders"
+              ]
+            })
+          }}
+        />
         {children}
       </body>
     </html>

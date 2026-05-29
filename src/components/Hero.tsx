@@ -38,9 +38,9 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-sm sm:text-base md:text-lg text-muted-foreground opacity-80 leading-relaxed max-w-xl font-normal"
+              className="text-sm sm:text-base md:text-lg text-primary/900 opacity-80 leading-relaxed max-w-xl font-normal"
             >
-              Explore premium properties, invest in luxury real estate, and transform your lifestyle instantly. This is where your search for the perfect property ends, and luxury truly finds a home. Discover an exclusive selection of meticulously crafted apartments, penthouses, and villas that redefine modern living. With Aashirwad Builders, you are not just buying a house; you are stepping into a community built on trust, architectural brilliance, and an uncompromising commitment to quality. Welcome to the home of your dreams.
+              Explore premium properties, invest in luxury real estate, and transform your lifestyle instantly.
             </motion.p>
           </div>
 
