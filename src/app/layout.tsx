@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Aashirwad Builders - Luxury Real Estate",
     description: "Find your dream home with Aashirwad Builders. Premium luxury real estate, apartments, and villas.",
-    url: "https://aashirwadbuilders.com",
+    url: "https://aashirwadbuilders.in",
     siteName: "Aashirwad Builders",
     images: [
       {
@@ -47,11 +47,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "RealEstateAgent",
               "name": "Aashirwad Builders",
-              "url": "https://aashirwadbuilders.com",
-              "logo": "https://aashirwadbuilders.com/logo.png",
-              "sameAs": [
-                "https://www.instagram.com/aashirwad_builders"
-              ]
+              "url": "https://aashirwadbuilders.in",
+              "logo": "https://aashirwadbuilders.in/logo.png"
             })
           }}
         />
