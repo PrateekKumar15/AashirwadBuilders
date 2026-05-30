@@ -106,7 +106,7 @@ export const projectsData: Project[] = [
   {
     id: "ecoworld-5",
     title: "Ecoworld-5 Apartment",
-    location: "Ajmer Road, Jaipur",
+    location: "Vaishali Extension, Jaipur",
     type: "Apartment",
     commonAmenities: ["Kids Play Area", "Rooftop Garden", "Community Hall", "GYM", "Swimming Pool", "CCTV Camera", "Senior Sitting Area", "Indoor Games", "Multipurpose Hall", "Yoga Pavilion", "Common Green Area", "Walking Track", "Ample Car Parking", "Power Backup", "High Speed Elevators", "Rain Water Harvesting", "Fire Safety", "Provision for EV Charging"],
     sizes: [
