@@ -10,19 +10,179 @@
     url("https://db.onlinewebfonts.com/t/a64ff11d2c24584c767f6257e880dc65.svg#Helvetica Regular")format("svg");
 }
 
+/* ─── Design Tokens (shadcn-style semantic variables) ─────── */
 @theme {
+  /* Font */
   --font-helvetica: "Helvetica Regular", ui-sans-serif, system-ui, sans-serif;
-  --color-primary: #1E325A;
+
+  /* Brand palette */
+  --color-primary:          #1E325A;
+  --color-primary-light:    #2a4475;
+  --color-primary-subtle:   #eef1f7;
+
+  /* Surfaces */
+  --color-surface:          #f4f2ef;
+  --color-surface-alt:      #f0f0f0;
+  --color-card:             #ffffff;
+
+  /* Text */
+  --color-foreground:       #1E325A;
   --color-muted-foreground: #5E6470;
+
+  /* Status */
+  --color-success:          #16a34a;
+  --color-warning:          #d97706;
+  --color-destructive:      #dc2626;
 }
 
+/* ─── CSS Custom properties (runtime, for opacity math) ─────── */
 :root {
   font-family: var(--font-helvetica);
   scroll-behavior: smooth;
+
+  /* Borders */
+  --border:        rgba(30,50,90,0.10);
+  --border-strong: rgba(30,50,90,0.20);
+
+  /* Glassmorphism surfaces */
+  --glass-card:    rgba(255,255,255,0.50);
+  --glass-overlay: rgba(255,255,255,0.70);
+
+  /* Subtle text */
+  --text-subtle:   rgba(30,50,90,0.50);
+
+  /* Shadows */
+  --shadow-sm:   0 1px 3px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04);
+  --shadow-md:   0 4px 24px rgba(0,0,0,0.10), 0 1px 4px rgba(0,0,0,0.06);
+  --shadow-lg:   0 8px 48px rgba(0,0,0,0.18);
 }
 
 body {
   margin: 0;
   overflow-x: hidden;
-  background-color: #f0f0f0;
+  background-color: var(--color-surface-alt);
+}
+
+/* ─── Utility classes (shadcn strategy) ──────────────────────── */
+
+/* Glass card */
+.card-glass {
+  background: var(--glass-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Solid white card */
+.card-solid {
+  background: var(--color-card);
+  border: 1px solid var(--border);
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Section label / eyebrow text */
+.section-label {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+}
+
+/* Pill chip */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: 1px solid var(--border);
+}
+
+.pill-primary {
+  background-color: var(--color-primary);
+  color: #fff;
+  border-color: transparent;
+}
+
+.pill-muted {
+  background-color: var(--color-primary-subtle);
+  color: var(--color-primary);
+}
+
+/* Primary CTA */
+.btn-primary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  background-color: var(--color-primary);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: background-color 0.25s, transform 0.15s, box-shadow 0.25s;
+  box-shadow: var(--shadow-md);
+  border: none;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  background-color: var(--color-primary-light);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Disabled button */
+.btn-disabled {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  background-color: var(--color-primary-subtle);
+  color: var(--text-subtle);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: not-allowed;
+  border: 1px solid var(--border);
+}
+
+/* Divider */
+.divider {
+  border-top: 1px solid var(--border);
+}
+
+/* Hide scrollbar globally-available */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Feature list item (2-col grid amenity) */
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--color-muted-foreground);
+}
+.feature-item:last-child {
+  border-bottom: none;
 }
