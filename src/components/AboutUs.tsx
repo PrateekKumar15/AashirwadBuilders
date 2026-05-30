@@ -28,7 +28,7 @@ export default function AboutUs() {
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-5xl lg:text-6xl font-normal text-primary/95 mb-6 tracking-tight leading-[1.1]"
           >
-            Crafting architectural masterpieces since 2005.
+            Crafting architectural masterpieces since 2009.
           </motion.h2>
           
           <motion.p
@@ -51,7 +51,7 @@ export default function AboutUs() {
             Our commitment is to transform rigid structural concepts into fluid, living environments that elevate the human experience. This is where your search for the perfect property ends, and luxury truly finds a home. With Aashirwad Builders, you are not just buying a house; you are stepping into a community built on trust, architectural brilliance, and an uncompromising commitment to quality.
           </motion.p>
           
-          <motion.button
+          {/* <motion.button
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -64,7 +64,7 @@ export default function AboutUs() {
             <div className="bg-white/20 p-1.5 rounded-full flex items-center justify-center">
               <ArrowUpRight className="w-4 h-4 text-white" />
             </div>
-          </motion.button>
+          </motion.button> */}
         </div>
 
         {/* Staggered Imagery Grid */}
@@ -99,7 +99,7 @@ export default function AboutUs() {
             transition={{ delay: 0.6 }}
             className="absolute z-30 top-[5%] right-[10%] bg-white/40 backdrop-blur-xl p-4 rounded-2xl border border-white/30 shadow-xl"
           >
-            <div className="text-3xl font-normal text-primary/90 text-center">20+</div>
+            <div className="text-3xl font-normal text-primary/90 text-center">15+</div>
             <div className="text-[10px] text-muted-foreground uppercase tracking-wider text-center mt-1">Years Experience</div>
           </motion.div>
         </div>

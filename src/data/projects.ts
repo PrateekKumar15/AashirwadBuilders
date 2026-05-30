@@ -114,7 +114,11 @@ export const projectsData: Project[] = [
         name: "2 BHK",
         price: "₹ 66 Lacs",
         customizable: false,
-        images: [],
+        images: [
+          "/property_1_1778505958766.png",
+          "/hero_image_1778505942789.png",
+          "/property_2_1778505977306.png"
+        ],
         features: {
           beds: 2,
           baths: 2,
