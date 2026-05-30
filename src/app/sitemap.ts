@@ -2,16 +2,13 @@ import { MetadataRoute } from 'next';
 import { projectsData } from '@/data/projects';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://aashirwadbuilders.com';
+  const baseUrl = 'https://aashirwadbuilders.in';
 
   const staticRoutes = [
     '',
     '/terms',
     '/privacy',
     '/cookies',
-    '/projects/pawan-putra',
-    '/projects/janak-vihar',
-    '/projects/ecoworld-5',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),

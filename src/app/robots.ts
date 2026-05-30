@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://aashirwadbuilders.com/sitemap.xml',
+    sitemap: 'https://aashirwadbuilders.in/sitemap.xml',
   };
 }
