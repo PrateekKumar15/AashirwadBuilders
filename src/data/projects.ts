@@ -48,7 +48,11 @@ export const projectsData: Project[] = [
           "/Pawanputra/4.jpeg",
           "/Pawanputra/5.jpeg",
           "/Pawanputra/6.jpeg",
-          "/Pawanputra/7.jpeg"
+          "/Pawanputra/7.jpeg",
+          "/Pawanputra/8.jpeg",
+          "/Pawanputra/9.jpeg",
+          "/Pawanputra/10.jpeg",
+          
         ],
         features: {
           beds: 4,

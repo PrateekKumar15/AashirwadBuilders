@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.aashirwadbuilders.in"),
   title: "Aashirwad Builders - Luxury Real Estate",
   description: "Aashirwad Builders - Where luxury finds a home. Office: F-39, Govindam Tower, Kalwar Road, Jaipur, 302012.",
   keywords: ["real estate", "luxury apartments", "Aashirwad Builders", "villas", "property", "buy home", "real estate in jaipur", "best builders in jaipur", "apartments in jaipur", "villas in jaipur", "plots in jaipur", "land in jaipur", "land for sale in jaipur", "plot for sale in jaipur","residential plots for sale in jaipur","residential plots in jaipur","residential plots in kalwar road jaipur","residential plots in kalanaka jaipur", "vaishali west villas","builders", "colonizers", "built on your own pace",],
