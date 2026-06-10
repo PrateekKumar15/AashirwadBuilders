@@ -112,7 +112,7 @@ export default function ContactUs() {
               </div>
               <div className="flex flex-col">
                 <span className="text-sm font-bold text-primary/80 uppercase tracking-wider mb-1">Email</span>
-                <a href="mailto:contact.aashirwadbuilders.com" className="text-muted-foreground font-normal hover:text-primary/90 transition-colors">contact.aashirwadbuilders.com</a>
+                <a href="mailto:contact.aashirwadbuilders@gmail.com" className="text-muted-foreground font-normal hover:text-primary/90 transition-colors">contact.aashirwadbuilders@gmail.com</a>
               </div>
             </motion.div>
           </div>
