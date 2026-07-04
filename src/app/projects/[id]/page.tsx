@@ -177,7 +177,7 @@ export default function ProjectDetailsPage() {
                 <BedDouble className="w-5 h-5 text-white/50" />
                 <div>
                   <div className="text-xl font-bold text-white">{activeSize.features.beds}</div>
-                  <div className="section-label text-white/60">Bedrooms</div>
+                  <div className="text-white/60">Bedrooms</div>
                 </div>
               </div>
             )}
@@ -186,7 +186,7 @@ export default function ProjectDetailsPage() {
                 <Bath className="w-5 h-5 text-white/50" />
                 <div>
                   <div className="text-xl font-bold text-white">{activeSize.features.baths}</div>
-                  <div className="section-label text-white/60">Bathrooms</div>
+                  <div className="text-white/60">Bathrooms</div>
                 </div>
               </div>
             )}
@@ -197,7 +197,7 @@ export default function ProjectDetailsPage() {
                   <div className="text-xl font-bold text-white">
                     {activeSize.features.sqft || activeSize.features.sqyard}
                   </div>
-                  <div className="section-label text-white/60">
+                  <div className="text-white/60">
                     {activeSize.features.sqft ? "Sq. Ft." : "Sq. Yd."}
                   </div>
                 </div>
@@ -208,7 +208,7 @@ export default function ProjectDetailsPage() {
             <div className="md:ml-auto flex flex-col items-end">
               <div className="text-2xl font-extrabold text-white"><p className=" text-xs font-thin text-white/60">Starting From</p> {activeSize.price}</div>
               {isCustomizable && (
-                <div className="section-label text-white/60">* Base Price</div>
+                <div className=" text-white/60">* Base Price</div>
               )}
             </div>
 
